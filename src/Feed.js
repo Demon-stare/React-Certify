@@ -1,21 +1,30 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { createClient } from '@supabase/supabase-js'
 
+const supabase = createClient('https://vuuuwblxyvhowzqcrhwx.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1dXV3Ymx4eXZob3d6cWNyaHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg2MTY0NzIsImV4cCI6MTk5NDE5MjQ3Mn0.ehzYJFOWr1A35rfELidnvqP26Uvq5JmKq8-s2iBrSzM')
+
+
+async function getpostsdats () {
+  console.log('yup');
+  try{
+   const { data, error } = await supabase
+    .from('POSTS')
+    .select()
+  }catch(e){
+    console.log('Something theda');
+  
+  }  
+}
 
 
 const Feed = () => {
-
-  const [session, setSession] = useState(null);
-   
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-    });
-
-  
-
-  return <div id="Home"> <h1>Hey {session.user.username} this is feed</h1> </div>;
+getpostsdats();
+  return (
+  <div id="Home">
+     <h1>Hey this is feed </h1> 
+     <p></p>
+  </div>
+  )
 };
-
 
 export default Feed;
