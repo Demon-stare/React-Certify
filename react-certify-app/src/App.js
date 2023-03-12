@@ -1,20 +1,22 @@
-import { Auth } from '@supabase/auth-ui-react'
-import {ThemeSupa,} from '@supabase/auth-ui-shared'
-import { createClient } from '@supabase/supabase-js'
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { supabase } from './supabaseClient';
+import Auth from './Auth';
+import Feed from './Feed';
 
-const supabase = createClient(
-  'https://bdhlabaohtxofvqemdwx.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkaGxhYmFvaHR4b2Z2cWVtZHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgxOTc0NDQsImV4cCI6MTk5Mzc3MzQ0NH0.hlS3rjCNleIb-PeIrWn2S41F4fTubUKzFShSB8Is1c4'
-)
+export default function App() {
+  const [session, setSession] = useState(null);
 
-export default function AuthUI() {
-  return (
-    <Auth
-    providers={[]}
-    supabaseClient={supabase}
-    appearance={{ theme: ThemeSupa
-     }}
-  />
-  );
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
+  return <div className="container">{!session ? <Auth /> : <Feed/>}</div>;
 }
 
