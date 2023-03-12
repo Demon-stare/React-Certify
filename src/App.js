@@ -17,6 +17,6 @@ export default function App() {
     });
   }, []);
 
-  return <div className="container">{!session ? <Auth /> : <Feed/>}</div>;
+  return <div className="container">{!session ? <Auth/> : <Feed/>}</div>;
 }
 
