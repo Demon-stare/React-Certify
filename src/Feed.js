@@ -10,6 +10,7 @@ async function getpostsdats () {
    const { data, error } = await supabase
     .from('POSTS')
     .select()
+    console.log(data);
   }catch(e){
     console.log('Something theda');
   
