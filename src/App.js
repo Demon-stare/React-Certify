@@ -18,6 +18,6 @@ export default function App() {
     });
   }, []);
 
-  return <div>{!session ? <Auth/> : <Feed/>}</div>;
+  return <div>{!session ? <Feed/> : <Feed/>}</div>;
 }
 
