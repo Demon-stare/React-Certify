@@ -11,8 +11,10 @@ async function getpostsdats () {
     .from('POSTS')
     .select()
     console.log(data);
+    console.log(error);
   }catch(e){
     console.log('Something theda');
+    
   
   }  
 }
