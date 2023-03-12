@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 import Auth from './Auth';
@@ -17,6 +18,6 @@ export default function App() {
     });
   }, []);
 
-  return <div className="container">{!session ? <Auth/> : <Feed/>}</div>;
+  return <div>{!session ? <Auth/> : <Feed/>}</div>;
 }
 
