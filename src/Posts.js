@@ -7,12 +7,13 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 
-export function Posts({ PostsList }) {
-
+export function Posts({ Props }) {
+    let data = Array.from(Props)
     return (
         <div className="PostsFeed">
             {
-                PostsList.map(row =>
+
+                data.map(row =>
                     <div id="Post-UI-Card">
                         <Card>
                             <Card.Img variant="top" src={row.image} />
@@ -23,7 +24,7 @@ export function Posts({ PostsList }) {
                                 </Card.Text>
                                 <ButtonGroup aria-label="Basic example">
                                     <Button variant="outline-primary"><img id="button-icon" alt="placeholder" src="https://www.svgrepo.com/show/93813/up-arrow.svg"></img></Button>
-                                    <Button variant="outline-danger"><img id="button-icon" alt="placeholder" src="https://www.svgrepo.com/show/80156/down-arrow.svg"></img></Button>
+                                    <Button variant="outline-danger"><img id="button-icon" alt="" src="https://www.svgrepo.com/show/80156/down-arrow.svg"></img></Button>
                                 </ButtonGroup>
                             </Card.Body>
                         </Card>
@@ -33,7 +34,7 @@ export function Posts({ PostsList }) {
         </div>
     );
 }
-    
+
 
 
 

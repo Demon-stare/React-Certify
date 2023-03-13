@@ -9,11 +9,8 @@ const supabase = createClient('https://vuuuwblxyvhowzqcrhwx.supabase.co', 'eyJhb
 
 async function getpostsdats() {
   console.log('entered-getposts');
-
   let PostsArray;
   try {
-
-    
     const { data, error } = await supabase
       .from('POSTS')
       .select()
@@ -21,25 +18,25 @@ async function getpostsdats() {
     console.log('gotposts');
     console.log(error);
     PostsArray = data;
-    
+
 
   } catch (e) {
     console.log('Something theda');
-    
+
 
   }
   return PostsArray
 }
 
- function Feed() {
-  
+export default function Feed() {
+  let v = getpostsdats()
   return (
     <div>
-      <Posts PostsList={getpostsdats()} />
+      <Posts Props={v} />
     </div>
   );
 
 };
 
-export default Feed();
+
 

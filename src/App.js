@@ -9,6 +9,7 @@ export default function App() {
   const [session, setSession] = useState(null);
 
   useEffect(() => {
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });
@@ -18,7 +19,8 @@ export default function App() {
     });
   }, []);
 
-  return <div>{!session ? <Auth/> : <Feed/>}</div>;
+  return <div>{!session ? <Feed /> : <Feed />}</div>;
 }
+
 
 
