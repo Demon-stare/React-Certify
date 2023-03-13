@@ -19,7 +19,7 @@ export function Posts({ PostsList }) {
                             <Card.Body>
                                 <Card.Title>{row.Title}</Card.Title>
                                 <Card.Text>
-                                    {row.Text}
+                                    {row.content}
                                 </Card.Text>
                                 <ButtonGroup aria-label="Basic example">
                                     <Button variant="outline-primary"><img id="button-icon" src="https://www.svgrepo.com/show/93813/up-arrow.svg"></img></Button>
