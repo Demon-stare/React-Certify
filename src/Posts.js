@@ -33,9 +33,11 @@ export function Posts({ Props }) {
                         
                         
                         <Card>
-                            <CardMedia id="Post-img"
+                            
+                            <CardMedia
+                                id="Post-img"
                                 component="img"
-                                alt="green iguana"
+                                alt="code red"
                                 sx={{ height: 180 }}
                                 image={row.image}
                                 title={row.Title}
