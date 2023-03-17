@@ -9,6 +9,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 export function Posts({ Props }) {
     let data = Array.from(Props)
+    console.log("data form postsclass"+Props);
     return (
         <div className="PostsFeed">
             {
