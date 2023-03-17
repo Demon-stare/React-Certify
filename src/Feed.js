@@ -1,9 +1,16 @@
 import * as React from 'react';
 import { createClient } from '@supabase/supabase-js'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Posts } from './Posts';
 import './App.css';
 import { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+
 
 
 
@@ -37,7 +44,36 @@ export default function Feed() {
 
   return (
     <div>
-      <Posts Props={posts} />
+      <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+
+          </IconButton>
+
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Feed
+          </Typography>
+
+          <Button color="inherit">Login</Button>
+
+        </Toolbar>
+
+      </AppBar>
+
+
+    </Box>
+      <Container id="Feed_Container">
+        <Posts Props={posts} />
+      </Container>
+     
     </div>
   );
 
