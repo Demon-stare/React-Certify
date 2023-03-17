@@ -25,7 +25,7 @@ export function Posts({ Props }) {
                 data.map(row =>
 
                     <div id="Post-UI-Card">
-                        <Card variant="outlined" id="Post-Border">
+                       
                         <Stack direction="row" spacing={2}>
                         <Avatar id="Post-Avatar" alt="Gachibowli dhiwakar" src="/static/images/avatar/1.jpg" />
                         <p id='Post-UserName'>Gachibowli Diwakar</p>
@@ -72,7 +72,7 @@ export function Posts({ Props }) {
 
                             
                         </div>
-                        </Card>
+                      
                        
                     </div>
 
