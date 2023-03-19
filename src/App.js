@@ -21,7 +21,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth/> : <Feed Session={session}/>} </div>;
+  return <div> { !session ? <Feed /> : <Feed/>} </div>;
 }
 
 
