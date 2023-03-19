@@ -37,18 +37,18 @@ export function Posts({ Props }) {
                                 component="img"
                                 alt="code red"
                                 sx={{ height: 180 }}
-                                image={row.image}
-                                title={row.Title}
+                                image={row.Post_Image}
+                                title={row.Post_Title}
                             />
                         </Card>
 
 
                         <p id="Post-title">
-                            {row.Title}
+                            {row.Post_Title}
                         </p>
 
                         <p id="Post-content">
-                            {row.content}
+                            {row.Post_content}
                         </p>
 
                         <div id="Post-buttons">
