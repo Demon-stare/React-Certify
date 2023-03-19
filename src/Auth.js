@@ -24,6 +24,7 @@ export default function Auth() {
     } 
     
     catch (error) {
+      console.log(error)
       alert(error.error_description || error.message);
     }
     
