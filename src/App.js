@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 import Auth from './Auth';
 import Feed from './Feed';
+import Account from './Account';
+
 
 export default function App() {
-  const [session, setSession] = useState(null);
 
+  const [session, setSession] = useState(null);
+  
   useEffect(() => {
 
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -18,7 +21,7 @@ export default function App() {
     });
   }, []);
 
-  return <div>{!session ? <Auth /> : <Feed />}</div>;
+  return <div> { !session ? <Auth/> : <Feed Session={session}/>} </div>;
 }
 
 

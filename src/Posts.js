@@ -19,21 +19,19 @@ export function Posts({ Props }) {
 
         <div>
 
-            
-
             {
                 data.map(row =>
 
                     <div id="Post-UI-Card">
-                       
+
                         <Stack direction="row" spacing={2}>
-                        <Avatar id="Post-Avatar" alt="Gachibowli dhiwakar" src="/static/images/avatar/1.jpg" />
-                        <p id='Post-UserName'>Gachibowli Diwakar</p>
+                            <Avatar id="Post-Avatar" alt="Gachibowli dhiwakar" src="/static/images/avatar/1.jpg" />
+                            <p id='Post-UserName'>Gachibowli Diwakar</p>
                         </Stack>
-                        
-                        
+
+
                         <Card>
-                            
+
                             <CardMedia
                                 id="Post-img"
                                 component="img"
@@ -60,7 +58,6 @@ export function Posts({ Props }) {
 
                             </IconButton>
 
-
                             <IconButton color="primary" aria-label="Comment" component="label">
 
                                 <ChatBubbleOutlineIcon />
@@ -72,15 +69,14 @@ export function Posts({ Props }) {
 
                             </IconButton>
 
-                            
                         </div>
-                      
-                       
+
+
                     </div>
 
                 )
             }
-            
+
         </div>
     );
 }

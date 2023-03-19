@@ -10,10 +10,11 @@ const Account = ({ session }) => {
   useEffect(() => {
     getProfile();
   }, [session]);
-  
+
   const getProfile = async () => {
     try {
       setLoading(true);
+      
       const { user } = session;
 
       let { data, error, status } = await supabase
@@ -30,11 +31,16 @@ const Account = ({ session }) => {
         setUsername(data.username);
         setaboutme(data.aboutme);
       }
-    } catch (error) {
+    }
+
+    catch (error) {
       alert(error.message);
-    } finally {
+    }
+
+    finally {
       setLoading(false);
     }
+
   };
 
   const updateProfile = async (e) => {
@@ -56,11 +62,17 @@ const Account = ({ session }) => {
       if (error) {
         throw error;
       }
-    } catch (error) {
+    }
+
+    catch (error) {
       alert(error.message);
-    } finally {
+    }
+
+    finally {
       setLoading(false);
     }
+
+
   };
 
   return (
