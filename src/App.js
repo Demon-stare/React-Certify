@@ -12,16 +12,18 @@ export default function App() {
   
   useEffect(() => {
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log(session);
       setSession(session);
     });
 
-    supabase.auth.onAuthStateChange((_event, session) => {
+   supabase.auth.onAuthStateChange((_event, session) => {
+    console.log(session);
       setSession(session);
     });
   }, []);
 
-  return <div> { !session ? <Feed /> : <Feed/>} </div>;
+  return <div> { !session ? <Auth /> : <Feed/>} </div>;
 }
 
 
