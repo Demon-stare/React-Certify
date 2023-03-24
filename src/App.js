@@ -6,6 +6,7 @@ import Feed from './Feed';
 import Account from './Account';
 
 
+
 export default function App() {
 
   const [session, setSession] = useState(null);
@@ -23,7 +24,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth /> : <Feed/>} </div>;
+  return <div> { !session ? <Feed /> : <Feed/>} </div>;
 }
 
 

@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
 
-export function Posts({ Props }) {
+export default function Posts ({Props}) {
 
     let data = Array.from(Props)
     console.log("data form postsclass" + Props);

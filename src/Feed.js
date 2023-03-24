@@ -9,14 +9,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-
-
+import Posts from './Posts'
 
 
 export default function Feed() {
   
   const supabase = createClient('https://fjyhzorwyiggzjglhxbp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqeWh6b3J3eWlnZ3pqZ2xoeGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkyMTc3MTIsImV4cCI6MTk5NDc5MzcxMn0.YpkAHXhwZrbDWROw4PiuFTe6ePKydhOTPaTJ2h9OIZk')
-  const [posts, Setposts] = useState([])
+  const [postsdata, Setposts] = useState([])
  
 
   useEffect(() => {
@@ -32,7 +31,7 @@ export default function Feed() {
     try {
       let { data: POSTS, error } = await supabase
            .from('POSTS')
-           .select('id')
+           .select()
            console.log("data from :", POSTS);
            Setposts(POSTS)
 
@@ -79,8 +78,7 @@ export default function Feed() {
 
     </Box>
       <Container id="Feed_Container">
-        <pre>{posts}</pre>
-        {/* <Posts Props={posts} /> */}
+        <Posts Props={postsdata}></Posts>
       </Container>
      
     </div>
