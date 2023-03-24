@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createClient } from '@supabase/supabase-js'
-import { Posts } from './Posts';
 import './App.css';
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
@@ -24,9 +23,6 @@ export default function Feed() {
     fetchposts()
   },[])
 
-  
-
-
 
   async function fetchposts() {
 
@@ -34,11 +30,12 @@ export default function Feed() {
 
 
     try {
-      const { data, error } = await supabase
-        .from('POSTS')
-        .select()
-      Setposts(data);
-      console.log("data from :", data);
+      let { data: POSTS, error } = await supabase
+           .from('POSTS')
+           .select('id')
+           console.log("data from :", POSTS);
+           Setposts(POSTS)
+
 
     } catch (e) {
       console.log('Something theda' + e);
@@ -82,7 +79,8 @@ export default function Feed() {
 
     </Box>
       <Container id="Feed_Container">
-        <Posts Props={posts} />
+        <pre>{posts}</pre>
+        {/* <Posts Props={posts} /> */}
       </Container>
      
     </div>

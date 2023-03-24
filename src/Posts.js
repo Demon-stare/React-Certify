@@ -38,17 +38,17 @@ export function Posts({ Props }) {
                                 alt="code red"
                                 sx={{ height: 180 }}
                                 image={row.Post_Image}
-                                title={row.Post_Title}
+                                title={row.Post_title}
                             />
                         </Card>
 
 
                         <p id="Post-title">
-                            {row.Post_Title}
+                            {row.Post_title}
                         </p>
 
                         <p id="Post-content">
-                            {row.Post_content}
+                            {row.Post_Content}
                         </p>
 
                         <div id="Post-buttons">
