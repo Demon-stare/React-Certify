@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 
 const Account = ({ session }) => {
+  
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
   const [aboutme, setaboutme] = useState(null);
@@ -13,14 +14,14 @@ const Account = ({ session }) => {
   }, [session]);
 
   const getProfile = async () => {
+
     try {
       setLoading(true);
-      
       const { user } = session;
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, aboutme`)
+        .select(`username`)
         .eq('id', user.id)
         .single();
 
@@ -29,8 +30,11 @@ const Account = ({ session }) => {
       }
 
       if (data) {
-        setUsername(data.username);
-        setaboutme(data.aboutme);
+        
+        setUsername(data.email);
+        updateProfile();
+
+
       }
     }
 
@@ -44,7 +48,10 @@ const Account = ({ session }) => {
 
   };
 
+
+
   const updateProfile = async (e) => {
+
     e.preventDefault();
 
     try {
@@ -54,9 +61,9 @@ const Account = ({ session }) => {
       const updates = {
         id: user.id,
         username,
-        aboutme,
         updated_at: new Date(),
       };
+  
 
       let { error } = await supabase.from('profiles').upsert(updates);
 
@@ -77,29 +84,15 @@ const Account = ({ session }) => {
   };
 
   return (
+
     <div id="After login">
-      {loading ? (
+      { loading ? (
         'Saving ...'
       ) : (
         <form onSubmit={updateProfile} className="form-widget">
           <div>Your Email: {session.user.email}</div>
           <div>
-            <label htmlFor="username">Name</label>
-            <input
-              id="username"
-              type="text"
-              value={username || ''}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="aboutme">aboutme</label>
-            <input
-              id="aboutme"
-              type="text"
-              value={aboutme || ''}
-              onChange={(e) => setaboutme(e.target.value)}
-            />
+          <div>Your Username: {session.user.email}</div>
           </div>
           <div>
             <button className="button primary block" disabled={loading}>
