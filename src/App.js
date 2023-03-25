@@ -24,7 +24,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth /> : <Feed/>} </div>;
+  return <div> { !session ? <Auth /> : <Account key={session.user.id} session={session} /> } </div>;
 }
 
 
