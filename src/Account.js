@@ -5,57 +5,14 @@ import Feed from './Feed';
 
 const Account = ({ session }) => {
   
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    getProfile();
+    updateProfile();
   }, [session]);
-
-
-  const getProfile = async () => {
-
-    try {
-
-      setLoading(true);
-      
-      const { user } = session;
-
-      let { data, error, status } = await supabase
-        .from('profiles')
-        .select(`username`)
-        .eq('id', user.id)
-        .single();
-
-        console.log("From data " + data.username);
-
-      if (error && status !== 406) {
-        throw error;
-      }
-
-      if (data) {
-        updateProfile();
-      }
-    }
-
-    catch (error) {
-      alert(error.message);
-    }
-
-    finally {
-      setLoading(false);
-    }
-
-  };
-
-
-
 
 
   const updateProfile = async (e) => {
 
     try {
-
-      setLoading(true);
 
       const { user } = session;
 
@@ -70,19 +27,18 @@ const Account = ({ session }) => {
 
       let { error } = await supabase.from('profiles').upsert(updates);
       console.log("upserted");
-      console.log(updates);
-
+  
+      
+      
       if (error) {
         throw error;
       }
     }
 
+
+
     catch (error) {
       alert(error.message);
-    }
-
-    finally {
-      setLoading(false);
     }
 
 
@@ -96,7 +52,7 @@ const Account = ({ session }) => {
 
     <div id="After login">
 
-      { loading ? ('Saving ...') : ( <Feed />  )  } 
+      <Feed /> 
 
       </div>
 

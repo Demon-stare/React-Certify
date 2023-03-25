@@ -6,19 +6,25 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
+import { Check } from '@mui/icons-material';
 
 
 
 export default function Auth() {
+
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
 
+
+
   const handleLogin = async (e) => {
+
     e.preventDefault();
 
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({ email });
+      const { error } = await supabase.auth.signInWithOtp({ email , type: 'signup'});
+      
       if (error) throw error;
       alert('Check your email for the login link!');
     } 
