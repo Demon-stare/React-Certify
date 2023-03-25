@@ -13,9 +13,12 @@ const Account = ({ session }) => {
     getProfile();
   }, [session]);
 
+
+
   const getProfile = async () => {
 
     try {
+
       setLoading(true);
       
       const { user } = session;
@@ -26,16 +29,14 @@ const Account = ({ session }) => {
         .eq('id', user.id)
         .single();
 
+        console.log("From data " + data);
+
       if (error && status !== 406) {
         throw error;
       }
 
       if (data) {
-        
-        setUsername(data.email);
         updateProfile();
-
-
       }
     }
 
@@ -51,13 +52,20 @@ const Account = ({ session }) => {
 
 
 
+
+
   const updateProfile = async (e) => {
 
     e.preventDefault();
 
     try {
+
       setLoading(true);
+
       const { user } = session;
+
+      console.log("eamil from database "+ user.email);
+      console.log("username from databse "+ user.username);
 
       const updates = {
         id: user.id,
@@ -67,6 +75,8 @@ const Account = ({ session }) => {
   
 
       let { error } = await supabase.from('profiles').upsert(updates);
+      console.log("upserted");
+      console.log(updates);
 
       if (error) {
         throw error;
@@ -84,6 +94,10 @@ const Account = ({ session }) => {
 
   };
 
+
+
+
+
   return (
 
     <div id="After login">
@@ -93,7 +107,7 @@ const Account = ({ session }) => {
         <form onSubmit={updateProfile} className="form-widget">
           <div>Your Email: {session.user.email}</div>
           <div>
-          <div>Your Username: {session.user.username}</div>
+          <div>Your Username : {session.user.username}</div>
           </div>
           <div>
             <button className="button primary block" disabled={loading}>
