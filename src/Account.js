@@ -56,8 +56,6 @@ const Account = ({ session }) => {
 
   const updateProfile = async (e) => {
 
-    e.preventDefault();
-
     try {
 
       setLoading(true);
