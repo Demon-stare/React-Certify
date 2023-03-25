@@ -35,9 +35,10 @@ export default function Auth() {
 
 
   return (
-    <div>
+    <div id="Auth-UI-Parent">
+      <center>
       <Card id="Title_card">
-        <h2 >Welcome to Certify</h2>
+        <h2 >Welcome to Vent</h2>
 
         {
          loading ? ('Sending one click sign on link...') : (
@@ -52,7 +53,7 @@ export default function Auth() {
                 variant="outlined"
                 className="inputField"
                 value={email}
-                helperText="We will send you a single click sign on link"
+                helperText="We will send you a link to sign-in"
                 onChange={(e) => setEmail(e.target.value)}>
 
               </TextField>
@@ -68,6 +69,7 @@ export default function Auth() {
         )}
 
       </Card>
+      </center>
     </div>
   );
 }

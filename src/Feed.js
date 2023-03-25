@@ -51,6 +51,7 @@ export default function Feed() {
 
   return (
     <div>
+     
       <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
 
@@ -77,10 +78,10 @@ export default function Feed() {
       </AppBar>
 
     </Box>
+    
       <Container id="Feed_Container">
         <Posts Props={postsdata}></Posts>
       </Container>
-     
     </div>
   );
 

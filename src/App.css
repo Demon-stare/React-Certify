@@ -1,22 +1,40 @@
 #Send_Link_Button{
-    margin: 5px;
+    margin: 8px;
 }
 
 #email_feild{
-    margin: 5px;
+    margin: 8px;
 }
+
 
 #View-Post{
   align-items: end;
 }
 
+#Poster-details{
+  margin: 2px;
+}
+
+#Title_card{
+  max-width: fit-content;
+  padding: 5px;
+  margin: 10px;
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid #1976d2;
+}
 
 #Post-title{
   display: block;
   width: 35ch;
+  line-height: 1.5em;
+  height: 3em;       /* height is 2x line-height, so two lines will display */
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 #Post-content{
@@ -25,12 +43,14 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
 
 #Post-UI-Card{
-    margin: 8px;
     margin-bottom: 25px;
+    padding: 8px;
+    
 }
 
 
@@ -40,9 +60,22 @@
 
 #Feed_Container{
 align-items: center;
+padding: 8px;
 }
 
 #Post-Avatar{
   margin: 4px;
   margin-left: 0px;
+}
+
+#Post-img{
+  max-width: fit-content;
+}
+
+#Auth-UI-Parent{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
 }
