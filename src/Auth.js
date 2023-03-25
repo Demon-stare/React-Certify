@@ -23,7 +23,7 @@ export default function Auth() {
 
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({email , type : 'signup', options: { data: { full_name: 'John',}}});
+      const { error } = await supabase.auth.signInWithOtp({email , type : 'signup', options: { data: { username: email}}});
 
 
       if (error) throw error;
