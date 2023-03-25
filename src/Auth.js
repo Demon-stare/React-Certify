@@ -15,16 +15,14 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
 
-
-
   const handleLogin = async (e) => {
 
     e.preventDefault();
 
     try {
+      
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({email , type : 'signup', options: { data: { username: email}}});
-
+      const { error } = await supabase.auth.signInWithOtp({email , type : 'signup', options: { data: { full_name: email}}});
 
       if (error) throw error;
       alert('Check your email for the login link!');
