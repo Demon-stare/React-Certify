@@ -5,10 +5,8 @@ import Feed from './Feed';
 
 const Account = ({ session }) => {
 
-  useEffect(() => {
+ 
     updateProfile();
-  }, [session]);
-
 
   const updateProfile = async (e) => {
 
@@ -46,13 +44,9 @@ const Account = ({ session }) => {
 
 
 
-
-
   return (
 
     <div id="After login">
-
-   
 
     </div>
 

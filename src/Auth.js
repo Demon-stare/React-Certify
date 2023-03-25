@@ -23,8 +23,9 @@ export default function Auth() {
 
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({ email , type: 'signup'});
-      
+      const { error } = await supabase.auth.signInWithOtp({email , type : 'signup', options: { data: { full_name: 'John',}}});
+
+
       if (error) throw error;
       alert('Check your email for the login link!');
     } 
