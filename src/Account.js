@@ -1,18 +1,15 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
+import Feed from './Feed';
 
 const Account = ({ session }) => {
   
   const [loading, setLoading] = useState(true);
-  const [username, setUsername] = useState(null);
-  const [aboutme, setaboutme] = useState(null);
-
 
   useEffect(() => {
     getProfile();
   }, [session]);
-
 
 
   const getProfile = async () => {
@@ -63,7 +60,6 @@ const Account = ({ session }) => {
       const { user } = session;
 
       console.log("eamil from database "+ user.email);
-      console.log("username from databse "+ user.username);
 
       const updates = {
         id: user.id,
@@ -99,26 +95,11 @@ const Account = ({ session }) => {
   return (
 
     <div id="After login">
-      { loading ? (
-        'Saving ...'
-      ) : (
-        <form onSubmit={updateProfile} className="form-widget">
-          <div>Your Email: {session.user.email}</div>
-          <div>
-          <div>Your Username : {session.user.username}</div>
-          </div>
-          <div>
-            <button className="button primary block" disabled={loading}>
-              Update profile
-            </button>
-          </div>
-        </form>
-      )}
 
-      <button type="button" onClick={() => supabase.auth.signOut()}>
-        Sign Out
-      </button>
-    </div>
+      { loading ? ('Saving ...') : ( <Feed />  )  } 
+
+      </div>
+
   );
 };
 
