@@ -4,7 +4,7 @@ import { supabase } from './supabaseClient';
 import Feed from './Feed';
 
 const Account = ({ session }) => {
-  
+
   useEffect(() => {
     updateProfile();
   }, [session]);
@@ -16,20 +16,20 @@ const Account = ({ session }) => {
 
       const { user } = session;
 
-      console.log("eamil from database "+ user.email);
+      console.log("eamil from database " + user.email);
 
       const updates = {
         id: user.id,
         username: user.email,
         updated_at: new Date(),
       };
-  
+
 
       let { error } = await supabase.from('profiles').upsert(updates);
       console.log("upserted");
-  
-      
-      
+
+
+
       if (error) {
         throw error;
       }
@@ -52,9 +52,9 @@ const Account = ({ session }) => {
 
     <div id="After login">
 
-      <Feed /> 
+   
 
-      </div>
+    </div>
 
   );
 };
