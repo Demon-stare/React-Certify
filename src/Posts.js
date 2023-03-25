@@ -25,7 +25,7 @@ export default function Posts({ Props }) {
 
         try {
             const { data: { user } } = await supabase.auth.getUser()
-            console.log(user);
+            console.log(user.email);
 
 
 
@@ -42,7 +42,7 @@ export default function Posts({ Props }) {
     return (
 
         <div>
-            <p>user</p>
+            <p></p>
 
             {
                 data.map(row =>
