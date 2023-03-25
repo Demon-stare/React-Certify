@@ -29,7 +29,7 @@ const Account = ({ session }) => {
         .eq('id', user.id)
         .single();
 
-        console.log("From data " + data);
+        console.log("From data " + data.username);
 
       if (error && status !== 406) {
         throw error;
