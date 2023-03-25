@@ -7,6 +7,7 @@ const Account = ({ session }) => {
   const [username, setUsername] = useState(null);
   const [aboutme, setaboutme] = useState(null);
 
+
   useEffect(() => {
     getProfile();
   }, [session]);

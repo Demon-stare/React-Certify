@@ -54,6 +54,14 @@ hr {
 }
 
 
+  body {
+     background-image:url("blobs.svg"); 
+     background-size: cover;  
+     background-repeat:   no-repeat;
+     background-position: center center;  
+  }
+
+
 #Post-UserName{
   align-self: center;
 }
