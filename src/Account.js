@@ -17,6 +17,7 @@ const Account = ({ session }) => {
 
     try {
       setLoading(true);
+      
       const { user } = session;
 
       let { data, error, status } = await supabase
@@ -60,7 +61,7 @@ const Account = ({ session }) => {
 
       const updates = {
         id: user.id,
-        username,
+        username: user.email,
         updated_at: new Date(),
       };
   
@@ -92,7 +93,7 @@ const Account = ({ session }) => {
         <form onSubmit={updateProfile} className="form-widget">
           <div>Your Email: {session.user.email}</div>
           <div>
-          <div>Your Username: {session.user.email}</div>
+          <div>Your Username: {session.user.username}</div>
           </div>
           <div>
             <button className="button primary block" disabled={loading}>
