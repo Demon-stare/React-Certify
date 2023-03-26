@@ -8,19 +8,23 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export default function Posts({ Props }) {
 
     let data = Array.from(Props)
     console.log("data form postsclass" + Props);
-     
+
 
     return (
 
         <div>
-            <p></p>
+
 
             {
                 data.map(row =>
@@ -29,8 +33,10 @@ export default function Posts({ Props }) {
                     <div id="Post-UI-Card">
 
                         <Stack id="Poster-details" direction="row" spacing={2}>
-                            <Avatar id="Post-Avatar"  src="/static/images/avatar/1.jpg" />
-                            <p id='Post-UserName'>{row.profiles.username}</p>
+                            <Avatar id="Post-Avatar" src="/static/images/avatar/1.jpg" />
+                            <p id='Post-UserName'>{row.profiles.full_name}<br />
+                                <sub>Posted this</sub></p>
+
                         </Stack>
 
 
@@ -45,16 +51,28 @@ export default function Posts({ Props }) {
                                 title={row.Post_title}
                             />
 
-                        </Card>
+
+                            <div id='testaccordian'>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1a-content">
+                                        <Typography id="post-header" > {row.Post_title}</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails  >
+                                        <Typography id="post-data">
+                                        {row.Post_Content}
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                            </div>
+
+                            </Card>
 
 
-                        <p id="Post-title">
-                            {row.Post_title}
-                        </p>
 
-                        <p id="Post-content">
-                            {row.Post_Content}
-                        </p>
+                        
+
 
                         <div id="Post-buttons">
 

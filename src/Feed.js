@@ -2,14 +2,9 @@ import * as React from 'react';
 import { createClient } from '@supabase/supabase-js'
 import './App.css';
 import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import Posts from './Posts'
+import ResponsiveAppBar from './ResponsiveAppBar.tsx'
 
 
 export default function Feed() {
@@ -31,7 +26,7 @@ export default function Feed() {
     try {
       let { data: POSTS, error } = await supabase
         .from('POSTS')
-        .select('*, profiles!inner (username)')
+        .select('*, profiles!inner (full_name)')
          console.log("data from : query", POSTS);
          Setposts(POSTS)
 
@@ -52,34 +47,7 @@ export default function Feed() {
 
   return (
     <div>
-
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-
-          <Toolbar>
-
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-
-            </IconButton>
-
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Feed
-            </Typography>
-
-            <Button color="inherit" onClick={signOut}>Logout</Button>
-
-          </Toolbar>
-
-        </AppBar>
-
-      </Box>
-
+      <ResponsiveAppBar/>
       <Container id="Feed_Container">
         <Posts Props={postsdata}></Posts>
       </Container>

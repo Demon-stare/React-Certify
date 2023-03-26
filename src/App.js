@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 import Auth from './Auth';
 import Feed from './Feed';
+import People from './People' 
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Feed/> : <Feed/> } </div>;
+  return <div> { !session ? <Auth/> : <Feed/> } </div>;
 }
 
 
