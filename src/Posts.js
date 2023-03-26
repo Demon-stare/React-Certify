@@ -8,7 +8,6 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { createClient } from '@supabase/supabase-js'
 
 
 
@@ -16,28 +15,7 @@ export default function Posts({ Props }) {
 
     let data = Array.from(Props)
     console.log("data form postsclass" + Props);
-     getUserName();
-    async function getUserName() {
-        const supabase = createClient('https://fjyhzorwyiggzjglhxbp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqeWh6b3J3eWlnZ3pqZ2xoeGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkyMTc3MTIsImV4cCI6MTk5NDc5MzcxMn0.YpkAHXhwZrbDWROw4PiuFTe6ePKydhOTPaTJ2h9OIZk')
-
-        console.log('entered-getusername');
-
-
-        try {
-            const { data: { user } } = await supabase.auth.getUser()
-            console.log(user.email);
-
-
-
-        } catch (e) {
-            console.log('Something theda' + e);
-
-
-        }
-
-    }
-
-
+     
 
     return (
 
@@ -51,8 +29,8 @@ export default function Posts({ Props }) {
                     <div id="Post-UI-Card">
 
                         <Stack id="Poster-details" direction="row" spacing={2}>
-                            <Avatar id="Post-Avatar" alt="Gachibowli dhiwakar" src="/static/images/avatar/1.jpg" />
-                            <p id='Post-UserName'>Gachibowli Diwakar</p>
+                            <Avatar id="Post-Avatar"  src="/static/images/avatar/1.jpg" />
+                            <p id='Post-UserName'>{row.profiles.username}</p>
                         </Stack>
 
 

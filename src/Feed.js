@@ -13,14 +13,14 @@ import Posts from './Posts'
 
 
 export default function Feed() {
-  
+
   const supabase = createClient('https://fjyhzorwyiggzjglhxbp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqeWh6b3J3eWlnZ3pqZ2xoeGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkyMTc3MTIsImV4cCI6MTk5NDc5MzcxMn0.YpkAHXhwZrbDWROw4PiuFTe6ePKydhOTPaTJ2h9OIZk')
   const [postsdata, Setposts] = useState([])
- 
+
 
   useEffect(() => {
     fetchposts()
-  },[])
+  }, [])
 
 
   async function fetchposts() {
@@ -30,10 +30,11 @@ export default function Feed() {
 
     try {
       let { data: POSTS, error } = await supabase
-           .from('POSTS')
-           .select()
-           console.log("data from :", POSTS);
-           Setposts(POSTS)
+        .from('POSTS')
+        .select('*, profiles!inner (username)')
+         console.log("data from : query", POSTS);
+         Setposts(POSTS)
+
 
 
     } catch (e) {
@@ -51,34 +52,34 @@ export default function Feed() {
 
   return (
     <div>
-     
+
       <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+        <AppBar position="static">
 
-        <Toolbar>
-          
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
+          <Toolbar>
 
-          </IconButton>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Feed
-          </Typography>
+            </IconButton>
 
-          <Button color="inherit" onClick={signOut}>Logout</Button>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Feed
+            </Typography>
 
-        </Toolbar>
+            <Button color="inherit" onClick={signOut}>Logout</Button>
 
-      </AppBar>
+          </Toolbar>
 
-    </Box>
-    
+        </AppBar>
+
+      </Box>
+
       <Container id="Feed_Container">
         <Posts Props={postsdata}></Posts>
       </Container>
