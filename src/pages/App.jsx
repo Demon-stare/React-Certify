@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase } from '../supabaseClient';
 import Auth from './Auth';
+import About from './About';
+import Home from './Homeeo';
 import Feed from './Feed';
 import People from './People' 
 

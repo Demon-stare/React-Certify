@@ -4,10 +4,10 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Posts from './Posts'
-import ResponsiveAppBar from './ResponsiveAppBar.tsx'
+import ResponsiveAppBar from './pages/ResponsiveAppBar.tsx'
 
 
-export default function Feed() {
+export default function Home() {
 
   const supabase = createClient('https://fjyhzorwyiggzjglhxbp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqeWh6b3J3eWlnZ3pqZ2xoeGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkyMTc3MTIsImV4cCI6MTk5NDc5MzcxMn0.YpkAHXhwZrbDWROw4PiuFTe6ePKydhOTPaTJ2h9OIZk')
   const [postsdata, Setposts] = useState([])

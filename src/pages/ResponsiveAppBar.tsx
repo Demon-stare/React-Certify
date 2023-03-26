@@ -12,6 +12,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import People from "./People";
+import About from "./About";
 
 const pages = ['Home', 'People', 'About'];
 const settings = ['Account', 'Dashboard', 'Logout'];
@@ -32,6 +36,7 @@ function ResponsiveAppBar() {
   };
 
   const handleCloseUserMenu = () => {
+
     setAnchorElUser(null);
   };
 
