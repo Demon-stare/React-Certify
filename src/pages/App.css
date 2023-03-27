@@ -7,20 +7,6 @@
 }
 
 
-#View-Post{
-  align-items: end;
-}
-
-#Poster-details{
-  margin: 2px;
-}
-
-#Title_card{
-  max-width: fit-content;
-  padding: 5px;
-  margin: 10px;
-}
-
 hr {
 	border: 0;
 	border-top: 2px solid #1976d2;
@@ -79,21 +65,4 @@ align-items: center;
 padding: 8px;
 }
 
-#Post-Avatar{
-  margin: 4px;
-  margin-left: 0px;
-}
 
-#Post-img{
-  max-width: fit-content;
-}
-
-#Auth-UI-Parent{
-  background-image:url("blobs.svg"); 
-  background-size: cover;  
-  background-repeat:   no-repeat;
-  background-position: center center;  
-  margin: 2px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-}

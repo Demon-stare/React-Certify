@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { createClient } from '@supabase/supabase-js'
-import './App.css';
+import './Feed.css';
 import { useState, useEffect } from 'react';
-import Container from '@mui/material/Container';
+import Container from 'react-bootstrap/Container';
 import Posts from './Posts'
-import ResponsiveAppBar from './pages/ResponsiveAppBar.tsx'
-
 
 export default function Home() {
 
@@ -47,10 +45,11 @@ export default function Home() {
 
   return (
     <div>
-      <ResponsiveAppBar/>
+      
       <Container id="Feed_Container">
         <Posts Props={postsdata}></Posts>
       </Container>
+    
     </div>
   );
 

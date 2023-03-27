@@ -1,0 +1,18 @@
+
+#Auth-UI-Parent{
+    background-image:url("blobs.svg"); 
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-position: center center;  
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
+  
+
+  #Auth-UI-Card{
+    align-items: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    align-self: center;
+    
+  }

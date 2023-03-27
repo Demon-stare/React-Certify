@@ -1,16 +1,16 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 
 export default function People() {
     return (
-      <Box sx={{ width: '100%' }}>
-        <Stack spacing={2}>
+      <div>
+
           <p>hi</p>
+          <br></br>
           <p>hellow</p>
+          <br></br>
           <p>Bye</p>
+          <br></br>
           <p>BOOI</p>
-        </Stack>
-      </Box>
+       </div>
     );
   }

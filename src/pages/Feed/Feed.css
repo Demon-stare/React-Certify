@@ -1,0 +1,92 @@
+#View-Post{
+    align-items: end;
+  }
+  
+  #Poster-details{
+    margin: 2px;
+  }
+
+  #Send_Link_Button{
+    margin: 8px;
+}
+
+#email_feild{
+    margin: 8px;
+}
+
+
+
+
+#Title_card{
+  max-width: fit-content;
+  padding: 5px;
+  margin: 10px;
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid #1976d2;
+}
+
+#Post-title{
+  display: block;
+  width: 35ch;
+  line-height: 1.5em;
+  height: 3em;       /* height is 2x line-height, so two lines will display */
+  overflow: hidden;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+#Post-content{
+  display: block;
+  max-height: 45px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+
+#Post-UI-Card{
+    margin-bottom: 25px;
+    padding: 8px;
+    
+}
+
+#post-header{
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#post-data{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+#Post-UserName{
+  align-self: center;
+  margin-left: 8px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#Feed_Container{
+align-items: center;
+padding: 8px;
+}
+
+#Post-Avatar{
+  margin: 4px;
+  margin-left: 0px;
+}
+
+#Post-img{
+  max-width: fit-content;
+}
+

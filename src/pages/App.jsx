@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
-import Auth from './Auth';
-import About from './About';
-import Home from './Homeeo';
-import Feed from './Feed';
-import People from './People' 
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Homebar from './Homebar';
+import About from './My account/About';
+import Auth from './Auth/Auth';
+import People from './People/People'
+
 
 
 export default function App() {
@@ -25,7 +27,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth/> : <Feed/> } </div>;
+  return <div> { !session ? <Auth/> : <Homebar/> } </div>;
 }
 
 
