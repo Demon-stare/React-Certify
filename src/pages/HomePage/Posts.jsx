@@ -23,15 +23,19 @@ export default function Posts({ Props }) {
 
                     <div id="Post-UI-Card">
 
+                       <Card id="Post-img">
+
+
+
                         <Stack id="Poster-details" gap={2}>
-                            <Image roundedCircle id="Post-Avatar" src="/static/images/avatar/1.jpg" />
+                            <Image roundedCircle id="Post-Avatar" src={row.Post_Image} />
                             <p id='Post-UserName'>{row.profiles.full_name}<br />
                                 <sub>Posted this</sub></p>
 
                         </Stack>
 
 
-                        <Card id="Post-img">
+                       
 
 
                             <Card.Img variant="top" src={row.Post_Image} alt="code red" />
@@ -39,7 +43,7 @@ export default function Posts({ Props }) {
 
                             <div id='testaccordian'>
 
-                                <Accordion defaultActiveKey="0" flush>
+                                <Accordion flush>
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header id="post-header" >{row.Post_title}</Accordion.Header>
                                         <Accordion.Body id="post-data" >

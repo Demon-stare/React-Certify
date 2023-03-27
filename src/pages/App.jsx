@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Homebar from './Homebar';
-import About from './My account/About';
+import Home from './HomePage/Home';
 import Auth from './Auth/Auth';
-import People from './People/People'
+
 
 
 
@@ -27,7 +26,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth/> : <Homebar/> } </div>;
+  return <div> { !session ? <Home/> : <Home/> } </div>;
 }
 
 

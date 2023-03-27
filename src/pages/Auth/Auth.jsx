@@ -7,6 +7,8 @@ import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 export default function Auth() {
@@ -39,11 +41,14 @@ export default function Auth() {
 
 
   return (
-    <div>
-    <Container>
-    <div id="Auth-UI-Parent">
+
+    <Container id='BackCover' fluid>
+      <Row>
+        <Col>  
+        
+        <div id="Auth-UI-Parent">
       <Card id="Auth-UI-Card">
-        <h2 >Welcome to Vent</h2>
+        <h2 id="Auth-UI-Title" >Welcome to Vent</h2>
         {
           loading ? ('Sending one click sign on link...') : (
 
@@ -69,8 +74,13 @@ export default function Auth() {
       </Card>
       
     </div>
+        
+        </Col>
+      </Row>
     </Container>
-    </div>
+
+    
+  
   );
 }
 
