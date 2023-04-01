@@ -45,7 +45,6 @@ export default function Home() {
 
   return (
     <div>
-      
       <Container id="Feed_Container">
         <Posts Props={postsdata}></Posts>
       </Container>

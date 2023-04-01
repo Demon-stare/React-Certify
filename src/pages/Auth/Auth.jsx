@@ -44,43 +44,46 @@ export default function Auth() {
 
     <Container id='BackCover' fluid>
       <Row>
-        <Col>  
-        
-        <div id="Auth-UI-Parent">
-      <Card id="Auth-UI-Card">
-        <h2 id="Auth-UI-Title" >Welcome to Vent</h2>
-        {
-          loading ? ('Sending one click sign on link...') : (
+        <Col>
 
-            <Stack direction="row" spacing={2}>
+          <div id="Auth-UI-Parent">
+            <Card id="Auth-UI-Card">
+              <h2 id="Auth-UI-Title" >Welcome to Blogo</h2>
+              {
+                loading ? ('Sending one click sign on link...') : (
 
-              <Form id="email_feild" onSubmit={handleLogin}>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}>
-                </Form.Control>
-                <Button id="Send_Link_Button" type="submit">
-                  Submit
-                </Button>
+                  <Stack direction="row" spacing={2}>
 
-              </Form>
+                    <Form id="email_feild" onSubmit={handleLogin}>
 
-            </Stack>
+                      <Form.Label>Email address</Form.Label>
 
-          )}
+                      <Form.Control
+                        type="email"
+                        value={email}
+                        placeholder="Enter email"
+                        onChange={(e) => setEmail(e.target.value)}>
+                      </Form.Control>
+                      <Button id="Send_Link_Button" type="submit">
+                        Submit
+                      </Button>
 
-      </Card>
-      
-    </div>
-        
+                    </Form>
+
+                  </Stack>
+
+                )}
+
+            </Card>
+
+          </div>
+
         </Col>
       </Row>
     </Container>
 
-    
-  
+
+
   );
 }
 
