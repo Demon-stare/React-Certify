@@ -1,19 +1,16 @@
 import * as React from 'react';
 import './Feed.css';
-import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
-import Image from 'react-bootstrap/Image'
-import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 
 export default function CreatePost() {
 
 
     return (
 
-        <div>
-            <Card>
+        <Container>
+           
 
                 <Form>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -25,12 +22,15 @@ export default function CreatePost() {
                         <Form.Label>Post Content</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
-                    
+
+                
+          <Button type="submit">Submit</Button>
+     
                 </Form>
 
-            </Card>
+           
 
-        </div>
+        </Container>
     );
 }
 

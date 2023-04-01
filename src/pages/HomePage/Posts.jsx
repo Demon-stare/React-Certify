@@ -4,6 +4,9 @@ import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Image from 'react-bootstrap/Image'
 import Accordion from 'react-bootstrap/Accordion';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 export default function Posts({ Props }) {
@@ -16,44 +19,55 @@ export default function Posts({ Props }) {
 
         <div>
 
-
             {
                 data.map(row =>
 
-
                     <div id="Post-UI-Card">
 
-                       <Card id="Post-img">
+                        <Card>
+                            <Card.Img variant="top" src={row.Post_Image} />
+                            <Card.Body>
+                                <Accordion flush defaultActiveKey="0">
+                                    <Accordion.Item eventKey={row.id}>
+                                        <Accordion.Header>
+                                            <Col>
+                                                <Row>
+
+                                                <Stack direction="horizontal" gap={3}>
+      
+    
+                                                    <Image roundedCircle id="Post-Avatar" src="https://www.shutterstock.com/image-vector/cute-panda-bear-avatar-cartoon-260nw-2115298928.jpg" />
+                                             
+                                                    <div>
+
+                                                        <p id='Post-UserName'>{row.profiles.full_name}<br />
+                                                            Posted this</p>
+                                                    </div>
+                                                    </Stack>
+                                                    </Row>
+
+
+                                                <Row>
+                                                    <Card.Title>{row.Post_title}</Card.Title>
+
+                                                </Row>
 
 
 
-                        <Stack id="Poster-details" gap={2}>
-                            <Image roundedCircle id="Post-Avatar" src={row.Post_Image} />
-                            <p id='Post-UserName'>{row.profiles.full_name}<br />
-                                <sub>Posted this</sub></p>
 
-                        </Stack>
+                                            </Col>
 
 
-                       
 
-
-                            <Card.Img variant="top" src={row.Post_Image} alt="code red" />
-
-
-                            <div id='testaccordian'>
-
-                                <Accordion flush>
-                                    <Accordion.Item eventKey="0">
-                                        <Accordion.Header id="post-header" >{row.Post_title}</Accordion.Header>
-                                        <Accordion.Body id="post-data" >
-                                            {row.Post_Content}
+                                        </Accordion.Header>
+                                        <Accordion.Body>
+                                            <Card.Text>
+                                                {row.Post_Content}
+                                            </Card.Text>
                                         </Accordion.Body>
                                     </Accordion.Item>
-
                                 </Accordion>
-                            </div>
-
+                            </Card.Body>
                         </Card>
 
                         <hr></hr>
@@ -66,7 +80,8 @@ export default function Posts({ Props }) {
             }
 
 
-        </div>
+
+        </div >
     );
 }
 

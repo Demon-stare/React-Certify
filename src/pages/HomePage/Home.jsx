@@ -12,47 +12,46 @@ import './Home.css';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import CreatePost from './CreatePost';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { useState } from 'react';
 
 function Home() {
+
+  const [key, setKey] = useState('home');
+
+  
+
+
+
+
   return (
     <div>
-        <Tab.Container>
-          <Col>
-            <Row>
-              
-              <Nav justify navbar >
-                <Nav.Item>
-                  <Nav.Link eventKey="Home">
-                  <p>Home</p>
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="Feed">Feed</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="People">People</Nav.Link>
-                </Nav.Item>
-              </Nav>
 
-            </Row>
-            <Row>
-              <Tab.Content>
-                <Tab.Pane eventKey="Home">
-                  <CreatePost/>
-                </Tab.Pane>
-                <Tab.Pane eventKey="Feed">
-                  <Feed />
-                </Tab.Pane>
-                <Tab.Pane eventKey="People">
-                  <People />
-                </Tab.Pane>
-              </Tab.Content>
+        <Navbar bg="primary" variant="dark">
+          <Container>
+            <Navbar.Brand href='#'>Bolgo</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.item onSelect={(k) => setKey(k)}>Home</Nav.item>
+              <Nav.item href="#features">Features</Nav.item>
+              <Nav.item href="#pricing">Pricing</Nav.item>
+            </Nav>
+          </Container>
+        </Navbar>
 
-            </Row>
-          </Col>
-        </Tab.Container>
-    
-    </div>
+        <Tabs>
+        <Tab eventKey="home">
+          <People />
+        </Tab>
+        <Tab eventKey="profile" title="Profile">
+          <CreatePost />
+        </Tab>
+        <Tab eventKey="contact" title="Contact">
+          <Feed />
+        </Tab>
+        </Tabs>
+      
+   
+
+    </div >
   );
 }
 
