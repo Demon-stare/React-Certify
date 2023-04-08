@@ -28,7 +28,7 @@ export default function Home() {
          console.log("data from : query", POSTS);
          Setposts(POSTS)
 
-
+         console.log(supabase.auth.getUser())
 
     } catch (e) {
       console.log('Something theda' + e);

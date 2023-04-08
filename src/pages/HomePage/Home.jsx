@@ -18,38 +18,19 @@ function Home() {
 
   const [key, setKey] = useState('home');
 
-  
-
-
-
-
   return (
     <div>
-
-        <Navbar bg="primary" variant="dark">
-          <Container>
-            <Navbar.Brand href='#'>Bolgo</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.item onSelect={(k) => setKey(k)}>Home</Nav.item>
-              <Nav.item href="#features">Features</Nav.item>
-              <Nav.item href="#pricing">Pricing</Nav.item>
-            </Nav>
-          </Container>
-        </Navbar>
-
-        <Tabs>
-        <Tab eventKey="home">
-          <People />
-        </Tab>
-        <Tab eventKey="profile" title="Profile">
+      <Tabs variant="pills" fill>
+        <Tab eventKey="home" title="Create Post">
           <CreatePost />
         </Tab>
-        <Tab eventKey="contact" title="Contact">
-          <Feed />
+        <Tab eventKey="contact" title="Feed">
+          <Feed/>
         </Tab>
-        </Tabs>
-      
-   
+        <Tab eventKey="profile" title="My Profile">
+        <People />
+        </Tab>
+      </Tabs>
 
     </div >
   );

@@ -26,7 +26,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth/> : <Home/> } </div>;
+  return <div> { !session ? <Home/> : <Home/> } </div>;
 }
 
 
