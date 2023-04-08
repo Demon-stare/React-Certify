@@ -12,6 +12,7 @@ import Auth from './Auth/Auth';
 export default function App() {
 
   const [session, setSession] = useState(null);
+
   
   useEffect(() => {
 
@@ -26,7 +27,7 @@ export default function App() {
     });
   }, []);
 
-  return <div> { !session ? <Auth/> : <Home/> } </div>;
+  return <div> { !session ? <Home/> : <Home/> } </div>;
 }
 
 

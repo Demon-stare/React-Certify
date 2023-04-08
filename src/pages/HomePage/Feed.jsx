@@ -24,7 +24,7 @@ export default function Home() {
     try {
       let { data: POSTS, error } = await supabase
         .from('POSTS')
-        .select('*, profiles!inner (full_name)')
+        .select('*, users!inner (full_name)')
          console.log("data from : query", POSTS);
          Setposts(POSTS)
 
