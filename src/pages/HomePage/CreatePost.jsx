@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
+import { supabase } from '../../supabaseClient';
 import { createClient } from '@supabase/supabase-js'
+
 
 
 export default function CreatePost() {
@@ -26,11 +28,11 @@ export default function CreatePost() {
 
         try {
 
-            console.log(" Bam");
+            const { data: { session },} = await supabase.auth.getSession()
 
             const { error } = await supabase.
                 from('POSTS')
-                .insert({ Post_title: posttitle, Post_Content: postcontent })
+                .insert({ Post_title: posttitle, Post_Content: postcontent ,Posterid: session.data.user.id})
                 
             if (error) throw error;
         }

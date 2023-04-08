@@ -16,15 +16,14 @@ export default function App() {
   
   useEffect(() => {
 
-      supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log("Session insisde"+ session.user.email);
-      console.log(session);
-      setSession(session);
+      supabase.auth.getSession().then(({ data: { session_ } }) => {
+      console.log(session_);
+      setSession(session_);
     });
 
-   supabase.auth.onAuthStateChange((_event, session) => {
-    console.log(session);
-      setSession(session);
+   supabase.auth.onAuthStateChange((_event, session_) => {
+    console.log(session_);
+      setSession(session_);
     });
   }, []);
 
