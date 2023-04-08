@@ -25,15 +25,13 @@ export default function CreatePost() {
         e.preventDefault();
 
         try {
-            const userdats = supabase.auth.getUser();
-            console.log(" Bam" + userdats.data.user.email);
+
+            console.log(" Bam");
 
             const { error } = await supabase.
                 from('POSTS')
                 .insert({ Post_title: posttitle, Post_Content: postcontent })
-
-
-
+                
             if (error) throw error;
         }
 
