@@ -28,11 +28,13 @@ export default function CreatePost() {
 
         try {
 
-            const { data: { session },} = await supabase.auth.getSession()
+            const {
+                data: { user },
+              } = await supabase.auth.getUser()
 
             const { error } = await supabase.
                 from('POSTS')
-                .insert({ Post_title: posttitle, Post_Content: postcontent ,Posterid: session.data.user.id})
+                .insert({ Post_title: posttitle, Post_Content: postcontent ,Posterid: user.id})
                 
             if (error) throw error;
         }
