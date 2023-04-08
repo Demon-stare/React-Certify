@@ -26,11 +26,11 @@ export default function CreatePost() {
 
         try {
             const userdats = supabase.auth.getUser();
-            console.log(userdats.data.user.email);
+            console.log(" Bam" + userdats.data.user.email);
 
             const { error } = await supabase.
                 from('POSTS')
-                .insert({ Post_title: posttitle, Post_content: postcontent })
+                .insert({ Post_title: posttitle, Post_Content: postcontent })
 
 
 
@@ -65,8 +65,8 @@ export default function CreatePost() {
                     <Form.Control
                         as="textarea"
                         rows={3}
-                        value={posttitle}
-                        onChange={(e) => setPostTitle(e.target.value)} />
+                        value={postcontent}
+                        onChange={(e) => setPostContent(e.target.value)} />
                 </Form.Group>
                 <Button type="submit">Submit</Button>
             </Form>
