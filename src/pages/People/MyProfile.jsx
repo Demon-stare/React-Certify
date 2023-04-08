@@ -17,7 +17,7 @@ function MyProfile() {
 
         const { data: { user },} = await supabase.auth.getUser()
             
-        if (error) throw error;
+       
     }
 
     catch (error) {
