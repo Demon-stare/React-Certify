@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { supabase } from '../../supabaseClient';
 import { createClient } from '@supabase/supabase-js'
 
 

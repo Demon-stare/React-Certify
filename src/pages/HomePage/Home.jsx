@@ -2,16 +2,9 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import About from '../My account/About';
 import Feed from './Feed';
-import People from '../People/People'
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import { Container } from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar';
+import MyProfile from '../People/MyProfile'
 import './Home.css';
-import ToggleButton from 'react-bootstrap/ToggleButton';
 import CreatePost from './CreatePost';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { useState } from 'react';
 
 function Home() {
@@ -28,7 +21,7 @@ function Home() {
           <Feed/>
         </Tab>
         <Tab eventKey="profile" title="My Profile">
-        <People />
+        <MyProfile />
         </Tab>
       </Tabs>
 
