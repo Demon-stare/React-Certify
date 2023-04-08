@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
 
       supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log("Session insisde"+ data.user.email);
+      console.log("Session insisde"+ session.user.email);
       console.log(session);
       setSession(session);
     });
