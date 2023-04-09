@@ -18,6 +18,7 @@ export default function MyProfile() {
 
         const { data: { user },} = await supabase.auth.getUser()
         userdata =user;
+        console.log(user)
             
     }
 

@@ -48,7 +48,7 @@ export default function Auth() {
 
           <div id="Auth-UI-Parent">
             <Card id="Auth-UI-Card">
-              <h2 id="Auth-UI-Title" >Welcome to Blogo</h2>
+              <h2 id="Auth-UI-Title">Welcome to Blogo</h2>
               {
                 loading ? ('Sending one click sign on link...') : (
 
